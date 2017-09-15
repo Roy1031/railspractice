@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 
-
+gem 'json', github: 'flori/json', branch: 'v1.8'
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
 gem 'faker', '1.7.3'
