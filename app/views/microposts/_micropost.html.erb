@@ -12,4 +12,7 @@
                   data: { confirm: "You sure?" } %>
     <% end %>
   </span>
+  <section class="favform">
+        <%= render 'shared/fav', locals: { micropost: micropost,fav: @favs } %>
+  </section>
 </li>
