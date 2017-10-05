@@ -6,6 +6,14 @@ class Micropost < ApplicationRecord
   validates :content, presence: true, length: { maximum: 140 }
   validate :picture_size
 
+
+  has_many :fav, dependent: :destroy
+
+
+
+  def fav_user(user_id)
+    fav.find_by(user_id: user_id)
+  end
   private
 
   # アップロードされた画像のサイズをバリデーションする
@@ -14,5 +22,7 @@ class Micropost < ApplicationRecord
       errors.add(:picture, "should be less than 5MB")
     end
   end
+
+
 
 end

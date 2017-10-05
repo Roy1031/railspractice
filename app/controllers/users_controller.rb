@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @microposts = @user.microposts.paginate(page: params[:page])
+    @favs = Fav.where(micropost_id: params[:micropost_id])
   end
 
   def index
@@ -59,6 +60,14 @@ class UsersController < ApplicationController
     @users = @user.followers.paginate(page: params[:page])
     render 'show_follow'
   end
+
+  def favers
+    @title = "Favorite"
+    @user = User.find(params[:id])
+    @users = @user.favers.paginate(page: params[:page])
+    render 'show_fav'
+  end
+
 
   private
 

@@ -1,0 +1,9 @@
+<% @user ||= current_user %>
+<div class="favstats">
+  <a href="<%= favers_user_user_path(@user) %>">
+    <strong id="faver" class="faverstat">
+      <%= @user.favers.count %>
+    </strong>
+    favers
+  </a>
+</div>

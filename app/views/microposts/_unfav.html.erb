@@ -1,0 +1,4 @@
+<%= form_for(current_user.active_favorites.find_by(faved_id: @user.id),
+             html: { method: :delete }) do |f| %>
+    <%= f.submit "Unfav", class: "btn" %>
+<% end %>

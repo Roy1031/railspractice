@@ -1,0 +1,9 @@
+<% unless current_user?(@micropost) %>
+    <div id="follow_form">
+      <% if current_user.fav?(@micropost) %>
+          <%= render 'unfav' %>
+      <% else %>
+          <%= render 'fav' %>
+      <% end %>
+    </div>
+<% end %>
